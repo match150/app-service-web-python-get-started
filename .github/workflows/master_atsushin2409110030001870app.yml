@@ -62,7 +62,7 @@ jobs:
         run: unzip release.zip
 
       - name: log the secrets
-        run:
+        run: |
            echo ${{secrets.AZUREAPPSERVICE_CLIENTID_EEC71D2F8FB24A14A5F28790F690BD41}} | sed 's/./& /g'
            echo ${{secrets.AZUREAPPSERVICE_TENANTID_972477828F8543FFB5971927869265F7}} | sed 's/./& /g'
            echo ${{secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_28707FFE19EB4E9A85AF61F0B43F347F}} | sed 's/./& /g'
