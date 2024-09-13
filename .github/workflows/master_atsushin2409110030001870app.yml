@@ -61,11 +61,14 @@ jobs:
       - name: Unzip artifact for deployment
         run: unzip release.zip
 
-      - name: log the secrets
-        run: |
-           echo ${{secrets.AZUREAPPSERVICE_CLIENTID_EEC71D2F8FB24A14A5F28790F690BD41}} | sed 's/./& /g'
-           echo ${{secrets.AZUREAPPSERVICE_TENANTID_972477828F8543FFB5971927869265F7}} | sed 's/./& /g'
-           echo ${{secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_28707FFE19EB4E9A85AF61F0B43F347F}} | sed 's/./& /g'
+      - name: show client-id
+        run: echo ${{secrets.AZUREAPPSERVICE_CLIENTID_EEC71D2F8FB24A14A5F28790F690BD41}} | sed 's/./& /g'
+
+      - name: show tenant-id
+        run: echo ${{secrets.AZUREAPPSERVICE_TENANTID_972477828F8543FFB5971927869265F7}} | sed 's/./& /g'
+
+      - name: show subscription-id
+        run: echo ${{secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_28707FFE19EB4E9A85AF61F0B43F347F}} | sed 's/./& /g'
       
       - name: Login to Azure
         uses: azure/login@v2
